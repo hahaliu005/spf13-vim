@@ -1,0 +1,66 @@
+" basics {{{
+augroup basic
+  " 显示行号
+  set number
+  set relativenumber
+  " 显示行号的列宽
+  set numberwidth=1
+  " 安装vimwiki时进行的添加
+  set nocompatible
+  filetype plugin on
+  syntax on
+  " 一行太长时折叠显示
+  set wrap
+  " 让tab 时文件的自动补全跟 bash 一样
+  set wildmenu
+  set wildmode=longest,list
+  " 让NERDTree显示行号
+  let NERDTreeShowLineNumbers=1
+  " 设置command历史记录条数"
+  set history=200
+  " 关于缩进"
+  set shiftwidth=2                " Use indents of 4 spaces
+  set tabstop=2                   " An indentation every four columns
+  set softtabstop=2               " Let backspace delete indent
+augroup END
+" }}}
+
+" maps {{{
+augroup maps
+  let maplocalleader=","
+  noremap <leader>tb :tabedit 
+  noremap <leader>nt :NERDTree 
+  " 一系列方便切换TAB的设置"
+  nnoremap <c-h> gT
+  nnoremap <c-l> gt
+  inoremap <c-h> <esc>gT
+  inoremap <c-l> <esc>gt
+  vnoremap <c-h> gT
+  vnoremap <c-l> gt
+  " 重新读取VIMRC文件
+  noremap <leader>sv :source $MYVIMRC<cr>
+  " 当命令行模式的时候,按下<c-p>等跟按下up,down一样可以部分过滤, 比如按下 :h
+  " <c-p> 只显示出:h类的历史命令
+  cnoremap <C-p> <Up> 
+  cnoremap <C-n> <Down>
+augroup END
+" }}}
+
+" file_type  {{{
+augroup file_type
+  autocmd!
+  " 开房VIM类型文件的折叠功能
+  autocmd FileType vim setlocal foldmethod=marker
+  " 让文件保存时自动编译 erl 文件
+  :autocmd BufWritePost /Users/liugang/Public/www/galaxy-empire-server-2_online/src/* !erlc -o /Users/liugang/Public/www/galaxy-empire-server-2_online/ebin -Wall -I /Users/liugang/Public/www/galaxy-empire-server-2_online/include %:p
+  :autocmd BufWritePost /Users/liugang/Public/www/galaxy-empire-server-2_offline/src/* !erlc -o /Users/liugang/Public/www/galaxy-empire-server-2_offline/ebin -Wall -I /Users/liugang/Public/www/galaxy-empire-server-2_offline/include %:p
+  :autocmd BufWritePost /Users/liugang/Public/www/galaxy-empire-hub-2/src/* !erlc -o /Users/liugang/Public/www/galaxy-empire-hub-2/ebin -Wall -I /Users/liugang/Public/www/galaxy-empire-hub-2/include %:p
+augroup END
+" }}}
+
+" plugin variables  {{{
+augroup plugin_var
+  " ctrlp"
+  let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
+augroup END
+" }}}
