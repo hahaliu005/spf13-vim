@@ -1,3 +1,5 @@
 " 添加完成后可以使用下面的命令来安装新插件
 " vim +BundleInstall! +BundleClean +q
-Bundle 'vim-scripts/vimwiki.git'
+Bundle 'hahaliu005/vimwiki'
+
+
