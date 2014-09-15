@@ -43,6 +43,16 @@ augroup maps
   " <c-p> 只显示出:h类的历史命令
   cnoremap <C-p> <Up> 
   cnoremap <C-n> <Down>
+  " 将gk与k   gj与j两个键映射互换"
+  nnoremap k gk
+  nnoremap gk k
+  nnoremap j gj
+  nnoremap gj j
+  " 将,与\调换位置"
+  let mapleader=","
+  noremap \ ,
+  " This selects the next closest text object.
+  map <SPACE> <Plug>(wildfire-fuel)
 augroup END
 " }}}
 
@@ -64,3 +74,20 @@ augroup plugin_var
   let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
 augroup END
 " }}}
+
+" vimwiki {
+augroup vimwiki
+  " 0 : Newlines in a list item are converted to <br />s."
+  let g:vimwiki_list_ignore_newline=0
+  let wiki_1 = {}
+  let wiki_1.path = '~/vimwiki/'
+  let wiki_1.html_template = '~/Public/www/vimwiki/'
+  let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp'}
+
+  let wiki_2 = {}
+  let wiki_2.path = '~/vimwiki/testdir/'
+  let wiki_2.html_template = '~/Public/www/vimwiki/testdir'
+
+  let g:vimwiki_list = [wiki_1, wiki_2]
+augroup END
+" }"
