@@ -1,5 +1,4 @@
 " 添加完成后可以使用下面的命令来安装新插件
 " vim +BundleInstall! +BundleClean +q
 Bundle 'hahaliu005/vimwiki'
-
-
+Bundle 'xuhdev/SingleCompile'

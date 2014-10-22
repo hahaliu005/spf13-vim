@@ -31,11 +31,11 @@ augroup maps
   noremap <leader>tb :tabedit 
   noremap <leader>nt :NERDTree 
   " 一系列方便切换TAB的设置"
-  nnoremap <c-h> gT
+  nnoremap <c-h>  gT
   nnoremap <c-l> gt
   inoremap <c-h> <esc>gT
   inoremap <c-l> <esc>gt
-  vnoremap <c-h> gT
+  vnoremap <c-h>  gT
   vnoremap <c-l> gt
   " 重新读取VIMRC文件
   noremap <leader>sv :source $MYVIMRC<cr>
@@ -53,6 +53,14 @@ augroup maps
   noremap \ ,
   " This selects the next closest text object.
   map <SPACE> <Plug>(wildfire-fuel)
+  " for the singlecompile remap key"
+  nmap <leader>r :SCCompile<cr>
+  nmap <leader>rr :SCCompileRun<cr>
+  " for neosnippet can jump use tab key"
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 augroup END
 " }}}
 
