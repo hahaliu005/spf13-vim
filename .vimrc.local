@@ -22,6 +22,11 @@ augroup basic
   set shiftwidth=2                " Use indents of 4 spaces
   set tabstop=2                   " An indentation every four columns
   set softtabstop=2               " Let backspace delete indent
+  " thie file encoding types"
+  set fileencoding=utf-8
+  set fileencodings=utf-8,gb2312,gdk,gb18030,latin1
+  set termencoding=utf-8
+  set encoding=utf-8
 augroup END
 " }}}
 
