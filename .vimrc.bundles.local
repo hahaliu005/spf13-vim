@@ -2,3 +2,4 @@
 " vim +BundleInstall! +BundleClean +q
 Bundle 'hahaliu005/vimwiki'
 Bundle 'xuhdev/SingleCompile'
+Bundle 'garbas/vim-snipmate'
