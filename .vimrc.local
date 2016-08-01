@@ -81,10 +81,6 @@ augroup file_type
   " 开房VIM类型文件的折叠功能
   autocmd FileType vim setlocal foldmethod=marker
   " 让文件保存时自动编译 erl 文件
-  :autocmd BufWritePost /Users/liugang/Public/www/galaxy-empire-server-2_online/src/* !erlc -o /Users/liugang/Public/www/galaxy-empire-server-2_online/ebin -Wall -I /Users/liugang/Public/www/galaxy-empire-server-2_online/include %:p
-  :autocmd BufWritePost /Users/liugang/Public/www/galaxy-empire-server-2_offline/src/* !erlc -o /Users/liugang/Public/www/galaxy-empire-server-2_offline/ebin -Wall -I /Users/liugang/Public/www/galaxy-empire-server-2_offline/include %:p
-  :autocmd BufWritePost /Users/liugang/Public/www/galaxy-empire-hub-2/src/* !erlc -o /Users/liugang/Public/www/galaxy-empire-hub-2/ebin -Wall -I /Users/liugang/Public/www/galaxy-empire-hub-2/include %:p
-  :autocmd BufWritePost /Users/liugang/test/myapp/src/* !erlc -o /Users/liugang/test/myapp/ebin/ -Wall -I /Users/liugang/test/myapp/include %:p
 augroup END
 " }}}
 
